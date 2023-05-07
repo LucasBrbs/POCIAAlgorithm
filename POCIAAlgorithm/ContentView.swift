@@ -13,12 +13,9 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Text("Prediction: \(viewModel.prediction)")
             Button {
-
-                viewModel.perceptron.train(inputs: viewModel.inputs, labels: viewModel.labels, epochs: 10)
-                let prediction = viewModel.perceptron.predict([1.0, 1.0])
-
-                print("\(prediction)")
+                viewModel.trainAndPredict()
             } label: {
                 Image(systemName: "plus")
             }
@@ -28,20 +25,21 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
-        VStack{
-            ForEach
-        }
+
     }
 }
 
 extension ContentView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var inputs = [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
-        @Published var labels = [0, 0, 0, 1]
-        @Published var perceptron = Perceptron(learningRate: 0.1, inputSize: 2)
+        @Published var prediction: Int = -1
+        let inputs = [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+        let labels = [0, 0, 0, 1]
+        let perceptron = Perceptron(learningRate: 0.1, inputSize: 2)
 
-
-
+        func trainAndPredict() {
+            perceptron.train(inputs: inputs, labels: labels, epochs: 10)
+            prediction = perceptron.predict([1.0, 1.0])
+        }
 
     }
 }
