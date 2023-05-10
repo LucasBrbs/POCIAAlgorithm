@@ -6,23 +6,37 @@
 //
 
 import SwiftUI
+import Numerics
+import RealModule
+import ComplexModule
+import Accelerate
+
 
 struct ContentView: View {
 
     @StateObject private var viewModel = ViewModel()
 
+
+
     var body: some View {
         VStack {
-            Text("Prediction: \(viewModel.prediction)")
+//            Text("Prediction: \(viewModel.prediction)")
             Button {
-                viewModel.trainAndPredict()
+                viewModel.printKNN()
+
             } label: {
+                Text("KNN")
                 Image(systemName: "plus")
             }
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text("\(viewModel.resultKNN)")
+            Button {
+                viewModel.printDMC()
+            } label: {
+                Text("DMC")
+                Image(systemName: "plus")
+            }
+            Text("\(viewModel.resultDMC)")
+
         }
         .padding()
 
@@ -31,63 +45,43 @@ struct ContentView: View {
 
 extension ContentView {
     @MainActor class ViewModel: ObservableObject {
-        @Published var prediction: Int = -1
-        let inputs = [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
-        let labels = [0, 0, 0, 1]
-        let perceptron = Perceptron(learningRate: 0.1, inputSize: 2)
+//        @Published var prediction: Int = -1
+//        let inputs = [[0.0, 0.0], [0.0, 1.0], [1.0, 0.0], [1.0, 1.0]]
+//        let labels = [0, 0, 0, 1]
+//        let perceptron = Perceptron(learningRate: 0.1, inputSize: 2)
+//
+//        func trainAndPredict() {
+//            perceptron.train(inputs: inputs, labels: labels, epochs: 10)
+//            prediction = perceptron.predict([1.0, 1.0])
+//        }
 
-        func trainAndPredict() {
-            perceptron.train(inputs: inputs, labels: labels, epochs: 10)
-            prediction = perceptron.predict([1.0, 1.0])
+        @Published var resultDMC:String = "No result"
+        @Published var resultKNN:String = "No result"
+
+        @Published var dataset = DataUtility.splitDataset(Iris.loadData(), trainingFactor: 0.7)
+
+//        print("Training dataset lenght: \(dataset.0.count)")
+//        print("Test dataset lenght: \(dataset.1.count)")
+
+        func printDMC(){
+            var dmc = DMC(splitedDataset: dataset)
+
+            print("Training dataset lenght: \(dataset.0.count)")
+            print("Test dataset lenght: \(dataset.1.count)")
+
+            print("Percent: \(Validator.validateClassifier(classifier: dmc, testDataset: dataset.1)) %\n")
+            resultDMC = "Percent: \(Validator.validateClassifier(classifier: dmc, testDataset: dataset.1)) %\n"
+
+        }
+
+        func printKNN(){
+            var knn = KNN(k: 3, splitedDataset: dataset)
+            print("Training dataset lenght: \(dataset.0.count)")
+            print("Test dataset lenght: \(dataset.1.count)")
+            print("Percent: \(Validator.validateClassifier(classifier: knn, testDataset: dataset.1)) %\n")
+            resultKNN = "Percent: \(Validator.validateClassifier(classifier: knn, testDataset: dataset.1)) %\n"
         }
 
     }
 }
 
-class Perceptron {
-    var learningRate: Double
-    var weights: [Double]
-
-
-
-    init(learningRate: Double , inputSize: Int = 0 ){
-        self.learningRate = learningRate
-        self.weights = [Double](repeating: 0.0, count: inputSize)
-    }
-
-    func activationFunction(_ input: Double) -> Int {
-        return input > 0 ? 1 : 0
-    }
-
-    func predict(_ inputs: [Double]) -> Int {
-            var sum = 0.0
-            for i in 0..<inputs.count {
-                sum += inputs[i] * weights[i]
-            }
-            let output = activationFunction(sum)
-            return output
-    }
-
-    func train(inputs: [[Double]], labels: [Int], epochs: Int) {
-        for epoch in 0..<epochs {
-            for i in 0..<inputs.count {
-                let prediction = predict(inputs[i])
-                let error = Double(labels[i] - prediction)
-                for j in 0..<weights.count {
-                    weights[j] += learningRate * error * inputs[i][j]
-                }
-            }
-        }
-    }
-
-
-
-
-}
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

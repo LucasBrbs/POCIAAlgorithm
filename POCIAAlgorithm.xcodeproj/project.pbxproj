@@ -11,6 +11,19 @@
 		FC2609432A0153BC00216112 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2609422A0153BC00216112 /* ContentView.swift */; };
 		FC2609452A0153BE00216112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2609442A0153BE00216112 /* Assets.xcassets */; };
 		FC2609482A0153BE00216112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2609472A0153BE00216112 /* Preview Assets.xcassets */; };
+		FC2609502A09327300216112 /* ComplexModule in Frameworks */ = {isa = PBXBuildFile; productRef = FC26094F2A09327300216112 /* ComplexModule */; };
+		FC2609522A09327300216112 /* Numerics in Frameworks */ = {isa = PBXBuildFile; productRef = FC2609512A09327300216112 /* Numerics */; };
+		FC2609542A09327300216112 /* RealModule in Frameworks */ = {isa = PBXBuildFile; productRef = FC2609532A09327300216112 /* RealModule */; };
+		FC2609562A093B6400216112 /* Iris.csv in Resources */ = {isa = PBXBuildFile; fileRef = FC2609552A093B6400216112 /* Iris.csv */; };
+		FC26098E2A0A7F7C00216112 /* Perceptron.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26098D2A0A7F7C00216112 /* Perceptron.swift */; };
+		FC2609922A0BC1B700216112 /* KNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2609912A0BC1B700216112 /* KNN.swift */; };
+		FC2609952A0BC26400216112 /* DMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2609942A0BC26400216112 /* DMC.swift */; };
+		FC2609982A0BC2C000216112 /* Iris.json in Resources */ = {isa = PBXBuildFile; fileRef = FC2609972A0BC2C000216112 /* Iris.json */; };
+		FC26099B2A0BC2EF00216112 /* Classifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26099A2A0BC2EF00216112 /* Classifier.swift */; };
+		FC26099E2A0BC33600216112 /* Iris.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26099D2A0BC33600216112 /* Iris.swift */; };
+		FC2609A02A0BC34E00216112 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC26099F2A0BC34E00216112 /* Species.swift */; };
+		FC2609A22A0BD59900216112 /* DataUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2609A12A0BD59900216112 /* DataUtility.swift */; };
+		FC2609A52A0BD5C500216112 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2609A42A0BD5C500216112 /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +32,16 @@
 		FC2609422A0153BC00216112 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC2609442A0153BE00216112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC2609472A0153BE00216112 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC2609552A093B6400216112 /* Iris.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Iris.csv; sourceTree = "<group>"; };
+		FC26098D2A0A7F7C00216112 /* Perceptron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Perceptron.swift; sourceTree = "<group>"; };
+		FC2609912A0BC1B700216112 /* KNN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KNN.swift; sourceTree = "<group>"; };
+		FC2609942A0BC26400216112 /* DMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMC.swift; sourceTree = "<group>"; };
+		FC2609972A0BC2C000216112 /* Iris.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Iris.json; sourceTree = "<group>"; };
+		FC26099A2A0BC2EF00216112 /* Classifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifier.swift; sourceTree = "<group>"; };
+		FC26099D2A0BC33600216112 /* Iris.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iris.swift; sourceTree = "<group>"; };
+		FC26099F2A0BC34E00216112 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		FC2609A12A0BD59900216112 /* DataUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtility.swift; sourceTree = "<group>"; };
+		FC2609A42A0BD5C500216112 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +49,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2609522A09327300216112 /* Numerics in Frameworks */,
+				FC2609502A09327300216112 /* ComplexModule in Frameworks */,
+				FC2609542A09327300216112 /* RealModule in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +77,15 @@
 		FC26093F2A0153BC00216112 /* POCIAAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				FC2609A32A0BD5B600216112 /* Utility */,
+				FC26099C2A0BC31E00216112 /* Model */,
+				FC2609962A0BC28E00216112 /* Resources */,
+				FC2609932A0BC25600216112 /* Implementations */,
 				FC2609402A0153BC00216112 /* POCIAAlgorithmApp.swift */,
 				FC2609422A0153BC00216112 /* ContentView.swift */,
-				FC2609442A0153BE00216112 /* Assets.xcassets */,
 				FC2609462A0153BE00216112 /* Preview Content */,
+				FC2609992A0BC2DF00216112 /* Protocol */,
+				FC2609A12A0BD59900216112 /* DataUtility.swift */,
 			);
 			path = POCIAAlgorithm;
 			sourceTree = "<group>";
@@ -65,6 +96,51 @@
 				FC2609472A0153BE00216112 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FC2609932A0BC25600216112 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				FC26098D2A0A7F7C00216112 /* Perceptron.swift */,
+				FC2609912A0BC1B700216112 /* KNN.swift */,
+				FC2609942A0BC26400216112 /* DMC.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		FC2609962A0BC28E00216112 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC2609442A0153BE00216112 /* Assets.xcassets */,
+				FC2609552A093B6400216112 /* Iris.csv */,
+				FC2609972A0BC2C000216112 /* Iris.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FC2609992A0BC2DF00216112 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				FC26099A2A0BC2EF00216112 /* Classifier.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		FC26099C2A0BC31E00216112 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FC26099D2A0BC33600216112 /* Iris.swift */,
+				FC26099F2A0BC34E00216112 /* Species.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FC2609A32A0BD5B600216112 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				FC2609A42A0BD5C500216112 /* Validator.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +159,11 @@
 			dependencies = (
 			);
 			name = POCIAAlgorithm;
+			packageProductDependencies = (
+				FC26094F2A09327300216112 /* ComplexModule */,
+				FC2609512A09327300216112 /* Numerics */,
+				FC2609532A09327300216112 /* RealModule */,
+			);
 			productName = POCIAAlgorithm;
 			productReference = FC26093D2A0153BC00216112 /* POCIAAlgorithm.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +192,9 @@
 				Base,
 			);
 			mainGroup = FC2609342A0153BC00216112;
+			packageReferences = (
+				FC26094E2A09327300216112 /* XCRemoteSwiftPackageReference "swift-numerics" */,
+			);
 			productRefGroup = FC26093E2A0153BC00216112 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,6 +209,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2609982A0BC2C000216112 /* Iris.json in Resources */,
+				FC2609562A093B6400216112 /* Iris.csv in Resources */,
 				FC2609482A0153BE00216112 /* Preview Assets.xcassets in Resources */,
 				FC2609452A0153BE00216112 /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +223,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC26099B2A0BC2EF00216112 /* Classifier.swift in Sources */,
+				FC2609952A0BC26400216112 /* DMC.swift in Sources */,
+				FC2609A52A0BD5C500216112 /* Validator.swift in Sources */,
+				FC26098E2A0A7F7C00216112 /* Perceptron.swift in Sources */,
+				FC26099E2A0BC33600216112 /* Iris.swift in Sources */,
+				FC2609922A0BC1B700216112 /* KNN.swift in Sources */,
 				FC2609432A0153BC00216112 /* ContentView.swift in Sources */,
+				FC2609A02A0BC34E00216112 /* Species.swift in Sources */,
+				FC2609A22A0BD59900216112 /* DataUtility.swift in Sources */,
 				FC2609412A0153BC00216112 /* POCIAAlgorithmApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +433,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FC26094E2A09327300216112 /* XCRemoteSwiftPackageReference "swift-numerics" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-numerics.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FC26094F2A09327300216112 /* ComplexModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC26094E2A09327300216112 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = ComplexModule;
+		};
+		FC2609512A09327300216112 /* Numerics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC26094E2A09327300216112 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = Numerics;
+		};
+		FC2609532A09327300216112 /* RealModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FC26094E2A09327300216112 /* XCRemoteSwiftPackageReference "swift-numerics" */;
+			productName = RealModule;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FC2609352A0153BC00216112 /* Project object */;
 }
